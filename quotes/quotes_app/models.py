@@ -23,7 +23,7 @@ class Quote(models.Model):
     quote = models.CharField(max_length=1500)
     tags = models.ManyToManyField(Tag, blank=False, null=False)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None, null=True, blank=True)
 
     def __str__(self):
         return f'{self.user.username}({self.user.email}): {self.quote} - {self.author.fullname}'
