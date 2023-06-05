@@ -1,1 +1,1 @@
-# django-13
+# Quotes app
